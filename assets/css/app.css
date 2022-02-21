@@ -37,6 +37,10 @@ ul>li {
     list-style: none;
 }
 
+.list-group-item {
+    border: 1px solid #fff;
+}
+
 small {
     font-size: 60%;
 }
