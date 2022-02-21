@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --app-color: #23527b
+}
+
+a {
+    text-decoration: none;
+}
+
+.rounded-4 {
+    border-radius: 1.5rem !important
+}
+
+.product-star-rating li.list-inline-item:not(:last-child) {
+    margin-right: 0 !important
+}
+
+.action-buttons {
+    border-radius: 1.5rem;
+}
