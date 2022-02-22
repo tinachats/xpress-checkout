@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+    <!-- App Core CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <title>Express Checkout</title>
+</head>
+
+<body>
+    <div class="container my-3">
+        <div class="d-flex flex-column">
+            <!-- Main Content -->
+            <div class="d-grid h-100 w-100">
+                <div class="m-auto text-center">
+                    <!-- Navigation -->
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="index.html" role="button" class="btn btn-sm rounded-circle d-grid">
+                            <i class="bi bi-chevron-left m-auto"></i>
+                        </a>
+                        <h1 class="fs-6 m-0">Product Details</h1>
+                        <a href="cart.html" role="button" class="btn bg-white btn-sm rounded-circle d-grid position-relative">
+                            <i class="bi bi-cart4 m-auto"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-dark">
+                              3
+                              <span class="visually-hidden">Cart Items</span>
+                            </span>
+                        </a>
+                    </div>
+                    <!-- /.Navigation -->
+
+                    <!-- Product Info -->
+                    <div class="d-block mt-3">
+                        <img src="assets/images/product-1.jpg" alt="Product Image" class="rounded-3 img-responsive w-100" height="300">
+                        <div class="d-block text-start lh-sm my-3">
+                            <div class="d-flex align-items-start justify-content-between">
+                                <div class="d-block">
+                                    <h2 class="fs-5 fw-bold text-capitalize mb-0">liquid neutrogena</h2>
+                                    <small class="text-muted text-capitalize">
+                                        Personal Care
+                                    </small>
+                                    <div class="d-flex align-items-center my-2">
+                                        <i class="bi bi-star-fill text-dark"></i>
+                                        <small class="fw-bold mx-1">5.0</small>
+                                        <small class="text-muted">(132 reviews)</small>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn bg-white btn-sm rounded-circle d-grid">
+                                    <i class="bi bi-heart m-auto"></i>
+                                </button>
+                            </div>
+
+                            <!-- Nav Tabs -->
+                            <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fs-6 active" id="description-tab" data-bs-toggle="pill" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fs-6" id="sizes-tab" data-bs-toggle="pill" data-bs-target="#sizes" type="button" role="tab" aria-controls="sizes" aria-selected="false">Sizes</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link fs-6" id="reviews-tab" data-bs-toggle="pill" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <!-- Product Description -->
+                                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                    <div style="width:320px">
+                                        <small class="text-muted text-wrap text-break">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde molestiae exercitationem modi. Obcaecati autem sunt corporis amet. Ratione ipsa qui, eveniet labore sunt quod dignissimos quam consequuntur quidem ipsam, ex facilis. Iusto et odio officia minima veniam tenetur quis. Soluta!
+                                        </small>
+                                    </div>
+                                </div>
+                                <!-- /.Product Description -->
+
+                                <!-- Product Variants/Sizes -->
+                                <div class="tab-pane fade" id="sizes" role="tabpanel" aria-labelledby="sizes-tab">
+                                    <div class="nav-scroller" style="width:320px;">
+                                        <nav class="nav nav-underline" aria-label="Secondary navigation">
+                                            <a class="nav-link prod-variant active" aria-current="page" href="javascript:void(0)">
+                                                <small>15ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>20ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>25ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>30ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>35ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>40ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>45ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>50ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>55ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>60ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>65ml</small>
+                                            </a>
+                                            <a class="nav-link prod-variant" href="javascript:void(0)">
+                                                <small>70ml</small>
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- /.Product Variants/Sizes -->
+
+                                <!-- Product Reviews -->
+                                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">...</div>
+                                <!-- /.Product Reviews -->
+                            </div>
+                            <!-- /.Nav Tabs -->
+
+                            <!-- Actions -->
+                            <div class="d-flex align-items-center justify-content-between my-3">
+                                <h6 class="fw-bold my-0">$18.39</h6>
+                                <!-- Action Buttons -->
+                                <div class="action-buttons d-flex align-items-center border border-dark">
+                                    <button type="button" class="btn btn-sm rounded-circle d-grid">
+                                        <i class="bi bi-dash m-auto"></i>
+                                    </button>
+                                    <span class="mx-3">2</span>
+                                    <button type="button" class="btn btn-sm rounded-circle d-grid">
+                                        <i class="bi bi-plus m-auto"></i>
+                                    </button>
+                                </div>
+                                <!-- /.Action Buttons -->
+                                <button type="button" class="btn btn-dark btn-sm rounded-circle d-grid">
+                                    <i class="bi bi-cart-plus m-auto"></i>
+                                </button>
+                            </div>
+                            <!-- /.Actions -->
+                        </div>
+                    </div>
+                    <!-- /.Product Info -->
+                </div>
+            </div>
+            <!-- /.Main Content -->
+        </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- App Core CSS -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
