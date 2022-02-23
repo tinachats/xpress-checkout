@@ -266,14 +266,9 @@ $(function() {
     }
     /*** /.Lazy load images ***/
 
-    // Gift Categories Carousel
-    $('#product-images-slider').owlCarousel({
-        items: 1,
-        lazyLoad: true,
-        loop: true,
-        margin: 0,
-        autoPlay: false,
-        navText: false,
-        dots: true,
+    $('.nav.nav-underline>.nav-link').on('click', function(e) {
+        e.preventDefault();
+        $(this).addClass('active');
+        $('.nav.nav-underline>.nav-link').not(this).removeClass('active');
     });
 });

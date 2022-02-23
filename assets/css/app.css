@@ -20,17 +20,23 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    height: 100%;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    box-sizing: border-box;
     background-color: #b8c6db;
     background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
 }
 
 a {
@@ -47,16 +53,17 @@ ul>li {
 }
 
 .fs-5 {
-    font-size: .75rem !important;
+    font-size: .9rem !important;
 }
 
+p,
 .fs-6 {
-    font-size: .7rem !important;
+    font-size: .8rem !important;
 }
 
 small,
 .fs-7 {
-    font-size: 60%;
+    font-size: 80%;
 }
 
 .bg-warning {
@@ -73,6 +80,12 @@ small,
 
 .product-star-rating li.list-inline-item:not(:last-child) {
     margin-right: 0 !important
+}
+
+.tab-content,
+.nav.nav-pills,
+.tab-pane {
+    width: 100% !important;
 }
 
 .nav-pills .nav-link.active,
@@ -118,47 +131,31 @@ small,
 
 .nav-scroller {
     position: relative;
-    z-index: 2;
-    height: 2.75rem;
     overflow-y: hidden;
 }
 
 .nav-scroller .nav {
     display: flex;
     flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
     overflow-x: auto;
-    color: rgba(255, 255, 255, .75);
     text-align: center;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 }
 
-.nav-underline .nav-link.prod-variant {
-    display: grid;
-    box-sizing: border-box;
-    height: 35px !important;
-    width: 35px !important;
-    border-radius: .3rem;
-    font-size: .875rem;
-    background-color: var(--bs-light);
-    color: var(--bs-muted);
-    margin: 0 .25rem;
-    padding: 0;
-}
-
-.nav-underline .nav-link.prod-variant.active {
-    background-color: var(--bs-dark);
-    color: var(--bs-white);
-}
-
-.nav-underline .nav-link.prod-variant * {
-    margin: auto;
-}
-
-.nav-underline .nav-link:hover {
+.nav-underline .nav-link {
+    background-color: var(--bs-muted);
+    padding: .75rem;
+    margin: .3rem;
+    font-size: .6rem;
     color: var(--bs-dark);
+    border-radius: .3rem;
+}
+
+.nav-underline .nav-link:hover,
+.nav-underline .nav-link.active {
+    background-color: var(--bs-warning);
+    color: var(--bs-white);
 }
 
 .nav-underline .active {
@@ -168,9 +165,20 @@ small,
 
 .rateyo {
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 50%;
-    transform: translate(-50%, -65%);
+    transform: translate(-50%, -55%);
+}
+
+.scan-bg {
+    height: 40px;
+    width: 40px;
+}
+
+.scan-bg>i {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -187,3 +195,95 @@ small,
 
 
 /* /.Owl Carousel */
+
+.step-indicator {
+    position: relative;
+}
+
+.step-indicator:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    background-color: var(--bs-muted);
+    height: 5px;
+    width: 100%;
+    top: 30%;
+    left: 50%;
+    transform: translateY(-50%, -30%);
+    border-radius: .5rem;
+    z-index: 0;
+}
+
+.step-indicator .step-button {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    background-color: var(--bs-muted);
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.step-indicator .step-button>i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+}
+
+.step-indicator span {
+    color: var(--bs-muted);
+}
+
+.step-indicator.active::after {
+    background-color: var(--bs-dark);
+}
+
+.step-indicator.active .step-button {
+    background-color: var(--bs-dark);
+}
+
+.step-indicator.active span.ms-1 {
+    color: var(--bs-dark);
+}
+
+.step-indicator.completed::after {
+    background-color: var(--bs-success);
+}
+
+.step-indicator.completed .step-button {
+    background-color: var(--bs-success);
+}
+
+.step-indicator.completed span.ms-1 {
+    color: var(--bs-success);
+}
+
+
+/* /.Step-Progress Indicator */
+
+
+/* Cart Badge */
+
+.cart-badge {
+    margin-top: -5px;
+    right: -5px;
+}
+
+
+/* /.Cart Bage */
+
+@media(max-width: 576px) {
+    .w-md-100 {
+        width: 100% !important;
+    }
+}
+
+@media(min-width: 576px) {
+    .container {
+        max-width: 370px !important;
+    }
+}

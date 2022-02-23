@@ -13,111 +13,97 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
-    <!-- RateYo -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <!-- App Core CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
     <title>Express Checkout</title>
 </head>
 
 <body>
-    <div class="container my-3">
-        <div class="d-flex flex-column">
-            <!-- Main Content -->
-            <div class="d-grid h-100 w-100">
-                <div class="m-auto text-center">
-                    <!-- Navigation -->
+    <div class="container h-100 my-3">
+        <div class="content h-100">
+            <!-- Navigation -->
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.html" role="button" class="btn btn-sm rounded-circle d-grid">
+                    <i class="bi bi-chevron-left m-auto"></i>
+                </a>
+                <h1 class="fw-bold fs-6 m-0">Scanned Results</h1>
+                <a href="cart.html" role="button" class="btn bg-white btn-sm rounded-circle d-grid position-relative">
+                    <i class="bi bi-cart4 m-auto"></i>
+                    <span class="position-absolute badge cart-badge rounded-circle bg-dark">
+                        3
+                        <span class="visually-hidden">Cart Items</span>
+                    </span>
+                </a>
+            </div>
+            <!-- /.Navigation -->
+
+            <!-- Product Actions -->
+            <div class="d-block bg-white rounded-4 p-3 my-3 shadow-sm">
+                <div class="d-flex align-items-start justify-content-between">
+                    <div class="d-block lh-sm">
+                        <h1 class="fs-6 fw-bold text-capitalize text-start text-dark mb-0">
+                            facial cleanser
+                        </h1>
+                        <small class="text-muted">
+                            Size: 7.60 fl oz / 225ml
+                        </small>
+                    </div>
+                    <div class="d-block text-center lh-sm">
+                        <h2 class="fs-6 my-0 text-capitalize">
+                            Personal Care
+                        </h2>
+                        <small class="text-muted">
+                            (32 items in stock)
+                        </small>
+                    </div>
+                </div>
+                <p class="text-wrap text-break mt-2">
+                    <small class="text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde molestiae exercitationem modi. Obcaecati autem sunt corporis amet. Ratione ipsa qui, eveniet labore sunt quod dignissimos quam consequuntur quidem ipsam, ex facilis. Iusto et odio officia minima veniam tenetur quis. Soluta!
+                    </small>
+                </p>
+                <div class="d-block mt-3">
                     <div class="d-flex align-items-center justify-content-between">
-                        <a href="index.html" role="button" class="btn btn-sm rounded-circle d-grid">
-                            <i class="bi bi-chevron-left m-auto"></i>
-                        </a>
-                        <a href="cart.html" role="button" class="btn bg-white btn-sm rounded-circle d-grid position-relative">
-                            <i class="bi bi-cart4 m-auto"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-dark">
-                              3
-                              <span class="visually-hidden">Cart Items</span>
-                            </span>
-                        </a>
-                    </div>
-                    <!-- /.Navigation -->
-
-                    <!-- Barcode Scanner -->
-                    <div class="d-block my-3">
-                        <img data-src="assets/images/scanning/barcode-scanner.gif" src="assets/images/app/bg-placeholder.PNG" alt="Barcode Scanner Gif" class="img-fluid shadow-sm lazy" loading="lazy">
-                    </div>
-                    <!-- /.Barcode Scanner -->
-
-                    <!-- Product Actions -->
-                    <div class="d-block bg-white rounded-4 p-3 shadow-sm">
-                        <div class="d-flex align-items-start justify-content-between">
-                            <div class="d-block lh-sm">
-                                <a href="product-details.html">
-                                    <h1 class="fs-6 fw-bold text-capitalize text-start text-dark">
-                                        facial cleanser
-                                    </h1>
-                                </a>
-                                <small class="text-muted">
-                                    Size: 7.60 fl oz / 225ml
-                                </small>
+                        <h2 class="fs-5 fw-bold my-0">
+                            $9.99
+                        </h2>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <!-- Action Buttons -->
+                            <div class="action-buttons d-flex align-items-center border border-dark">
+                                <button type="button" class="btn btn-sm rounded-circle d-grid">
+                                    <i class="bi bi-dash m-auto"></i>
+                                </button>
+                                <span class="mx-3">0</span>
+                                <button type="button" class="btn btn-sm rounded-circle d-grid">
+                                    <i class="bi bi-plus m-auto"></i>
+                                </button>
                             </div>
-                            <div class="d-block lh-sm">
-                                <ul class="product-star-rating list-inline mx-0 mb-1">
-                                    <li class="list-inline-item">
-                                        <i class="bi bi-star-fill text-dark"></i>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="bi bi-star-fill text-dark"></i>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="bi bi-star-fill text-dark"></i>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="bi bi-star-fill text-dark"></i>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <i class="bi bi-star-half text-dark"></i>
-                                    </li>
-                                </ul>
-                                <small class="text-muted">
-                                    (32 reviews)
-                                </small>
-                            </div>
-                        </div>
-                        <div class="d-block mt-3">
-                            <div class="d-flex align-items-start justify-content-between">
-                                <h2 class="fs-5 fw-bold my-0">
-                                    $9.99
-                                </h2>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <!-- Action Buttons -->
-                                    <div class="action-buttons d-flex align-items-center border border-dark">
-                                        <button type="button" class="btn btn-sm rounded-circle d-grid">
-                                            <i class="bi bi-dash m-auto"></i>
-                                        </button>
-                                        <span class="mx-3">2</span>
-                                        <button type="button" class="btn btn-sm rounded-circle d-grid">
-                                            <i class="bi bi-plus m-auto"></i>
-                                        </button>
-                                    </div>
-                                    <!-- /.Action Buttons -->
-                                    <a href="cart.html" role="button" class="btn btn-dark btn-sm rounded-pill ms-3 px-3">Cart</a>
-                                </div>
-                            </div>
+                            <!-- /.Action Buttons -->
+                            <a href="cart.html" role="button" class="btn btn-dark btn-sm rounded-pill ms-3 px-3">View Cart</a>
                         </div>
                     </div>
-                    <!-- /.Product Actions -->
                 </div>
             </div>
-            <!-- /.Main Content -->
+            <!-- /.Product Actions -->
         </div>
+        <footer class="footer mb-5">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <a href="index.html" role="button" class="btn border border-dark btn-sm rounded-circle d-grid me-2">
+                        <i class="bi bi-upc-scan m-auto"></i>
+                    </a>
+                    <a role="button" href="checkout.html" class="btn btn-dark btn-lg rounded-pill w-100 fs-5">
+                        Proceed to Checkout
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!-- RateYo -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
     <!-- App Core CSS -->
     <script src="assets/js/app.js"></script>
 </body>

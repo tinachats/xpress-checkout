@@ -15,9 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
     <!-- RateYo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
     <!-- App Core CSS -->
@@ -26,259 +23,221 @@
 </head>
 
 <body>
-    <div class="container my-3">
-        <div class="d-flex flex-column">
-            <!-- Main Content -->
-            <div class="d-grid h-100 w-100">
-                <div class="m-auto text-center">
-                    <!-- Navigation -->
+    <div class="container h-100 my-3">
+        <div class="content h-100">
+            <!-- Navigation -->
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="index.html" role="button" class="btn btn-sm rounded-circle d-grid">
+                    <i class="bi bi-chevron-left m-auto"></i>
+                </a>
+                <h1 class="fw-bold fs-6 m-0">Product Details</h1>
+                <a href="cart.html" role="button" class="btn bg-white btn-sm rounded-circle d-grid position-relative">
+                    <i class="bi bi-cart4 m-auto"></i>
+                    <span class="position-absolute badge cart-badge rounded-circle bg-dark">
+                3
+                <span class="visually-hidden">Cart Items</span>
+                    </span>
+                </a>
+            </div>
+            <!-- /.Navigation -->
+
+            <!-- Product Info -->
+            <div class="d-block mt-3">
+                <img data-src="assets/images/products/product-1.jpg" alt="Product Image" src="assets/images/app/bg-placeholder.PNG" height="300" class="rounded-3 w-100 lazy" loading="lazy">
+                <div class="d-block text-start lh-sm my-3">
                     <div class="d-flex align-items-center justify-content-between">
-                        <a href="index.html" role="button" class="btn btn-sm rounded-circle d-grid">
-                            <i class="bi bi-chevron-left m-auto"></i>
-                        </a>
-                        <h1 class="fs-6 m-0">Product Details</h1>
-                        <a href="cart.html" role="button" class="btn bg-white btn-sm rounded-circle d-grid position-relative">
-                            <i class="bi bi-cart4 m-auto"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-dark">
-                              3
-                              <span class="visually-hidden">Cart Items</span>
-                            </span>
-                        </a>
+                        <div class="d-block">
+                            <h2 class="fs-5 fw-bold text-capitalize mb-0">liquid neutrogena</h2>
+                            <small class="text-muted text-capitalize">
+                                Personal Care
+                            </small>
+                        </div>
+                        <button type="button" class="btn bg-white btn-sm rounded-circle d-grid">
+                            <i class="bi bi-heart m-auto"></i>
+                        </button>
                     </div>
-                    <!-- /.Navigation -->
 
-                    <!-- Product Info -->
-                    <div class="d-block mt-3">
-                        <img data-src="assets/images/products/product-1.jpg" alt="Product Image" src="assets/images/app/bg-placeholder.PNG" height="300" class="rounded-3 w-100 lazy" loading="lazy">
-                        <!-- <div class="owl-carousel owl-theme" id="product-images-slider">
-                            <div class="item">
-                                <img data-src="assets/images/products/product-1.jpg" alt="Product Image" src="assets/images/app/bg-placeholder.PNG" height="300" width="320" class="rounded-3 owl-lazy">
-                            </div>
-                            <div class="item">
-                                <img data-src="assets/images/products/product-2.jpg" alt="Product Image" src="assets/images/app/bg-placeholder.PNG" height="300" width="320" class="rounded-3 owl-lazy">
-                            </div>
-                            <div class="item">
-                                <img data-src="assets/images/products/product-3.jpg" alt="Product Image" src="assets/images/app/bg-placeholder.PNG" height="300" width="320" class="rounded-3 owl-lazy">
-                            </div>
-                        </div> -->
-                        <div class="d-block text-start lh-sm my-3">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-block">
-                                    <h2 class="fs-5 fw-bold text-capitalize mb-0">liquid neutrogena</h2>
-                                    <small class="text-muted text-capitalize">
-                                        Personal Care
-                                    </small>
-                                </div>
-                                <button type="button" class="btn bg-white btn-sm rounded-circle d-grid">
-                                    <i class="bi bi-heart m-auto"></i>
-                                </button>
-                            </div>
+                    <!-- Nav Tabs -->
+                    <ul class="nav nav-pills nav-justified my-3 mx-0" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fs-6 active" id="description-tab" data-bs-toggle="pill" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fs-6" id="sizes-tab" data-bs-toggle="pill" data-bs-target="#sizes" type="button" role="tab" aria-controls="sizes" aria-selected="false">Sizes</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fs-6" id="reviews-tab" data-bs-toggle="pill" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- Product Description -->
+                        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                            <p class="text-wrap text-break">
+                                <small class="text-muted">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde molestiae exercitationem modi. Obcaecati autem sunt corporis amet. Ratione ipsa qui, eveniet labore sunt quod dignissimos quam consequuntur quidem ipsam, ex facilis. Iusto et odio officia minima veniam tenetur quis. Soluta!
+                                </small>
+                            </p>
+                        </div>
+                        <!-- /.Product Description -->
 
-                            <!-- Nav Tabs -->
-                            <ul class="nav nav-pills nav-justified my-3 w-100" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link fs-6" id="description-tab" data-bs-toggle="pill" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Description</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link fs-6" id="sizes-tab" data-bs-toggle="pill" data-bs-target="#sizes" type="button" role="tab" aria-controls="sizes" aria-selected="false">Sizes</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link fs-6 active" id="reviews-tab" data-bs-toggle="pill" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
-                                </li>
-                            </ul>
-                            <div class="tab-content w-100" id="pills-tabContent">
-                                <!-- Product Description -->
-                                <div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
-                                    <div style="width:320px">
-                                        <small class="text-muted text-wrap text-break">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde molestiae exercitationem modi. Obcaecati autem sunt corporis amet. Ratione ipsa qui, eveniet labore sunt quod dignissimos quam consequuntur quidem ipsam, ex facilis. Iusto et odio officia minima veniam tenetur quis. Soluta!
-                                        </small>
+                        <!-- Product Variants/Sizes -->
+                        <div class="tab-pane fade" id="sizes" role="tabpanel" aria-labelledby="sizes-tab">
+                            <div class="nav-scroller">
+                                <nav class="nav nav-underline" aria-label="Secondary navigation">
+                                    <a class="nav-link active" aria-current="page" href="#">5ml</a>
+                                    <a class="nav-link" href="#">10ml</a>
+                                    <a class="nav-link" href="#">15ml</a>
+                                    <a class="nav-link" href="#">20ml</a>
+                                    <a class="nav-link" href="#">25ml</a>
+                                    <a class="nav-link" href="#">30ml</a>
+                                    <a class="nav-link" href="#">35ml</a>
+                                    <a class="nav-link" href="#">40ml</a>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- /.Product Variants/Sizes -->
+
+                        <!-- Product Reviews -->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                            <div class="d-block lh-sm">
+                                <h6 class="fs-6 fw-bold">Customer rating summary</h6>
+                                <div class="row g-2 align-items-center justify-content-between">
+                                    <div class="col-4">
+                                        <div class="d-flex flex-column justify-content-center text-center lh-sm position-relative">
+                                            <h3 class="display-6 fw-bold m-0">4.4</h3>
+                                            <div class="rateyo" id="star-rating"></div>
+                                            <h6 class="text-muted fs-6 mt-3">1263 ratings</h6>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- /.Product Description -->
-
-                                <!-- Product Variants/Sizes -->
-                                <div class="tab-pane fade" id="sizes" role="tabpanel" aria-labelledby="sizes-tab">
-                                    <div class="nav-scroller" style="width:320px;">
-                                        <nav class="nav nav-underline" aria-label="Secondary navigation">
-                                            <a class="nav-link prod-variant active" aria-current="page" href="javascript:void(0)">
-                                                <small>15ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>20ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>25ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>30ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>35ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>40ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>45ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>50ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>55ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>60ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>65ml</small>
-                                            </a>
-                                            <a class="nav-link prod-variant" href="javascript:void(0)">
-                                                <small>70ml</small>
-                                            </a>
-                                        </nav>
-                                    </div>
-                                </div>
-                                <!-- /.Product Variants/Sizes -->
-
-                                <!-- Product Reviews -->
-                                <div class="tab-pane fade show active" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                                    <div class="d-block lh-sm">
-                                        <h6 class="fs-6 fw-bold">Customer rating summary</h6>
-                                        <div class="row g-3 align-items-center justify-content-between">
-                                            <div class="col-4">
-                                                <div class="d-flex flex-column justify-content-center text-center lh-sm position-relative">
-                                                    <h3 class="display-6 fw-bold m-0">4.4</h3>
-                                                    <div class="rateyo" id="star-rating"></div>
-                                                    <h6 class="text-muted fs-6 mt-3">1263 ratings</h6>
-                                                </div>
+                                    <div class="col-7">
+                                        <div class="d-flex align-items-center w-100">
+                                            <span class="text-muted me-2 fs-6">5</span>
+                                            <div class="progress w-100" style="height: 5px;">
+                                                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
-                                            <div class="col-8">
-                                                <div class="d-flex align-items-center w-100">
-                                                    <span class="text-muted me-2 fs-6">5</span>
-                                                    <div class="progress w-100" style="height: 5px;">
-                                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center w-100">
-                                                    <span class="text-muted me-2 fs-6">4</span>
-                                                    <div class="progress w-100" style="height: 5px;">
-                                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 78%;" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center w-100">
-                                                    <span class="text-muted me-2 fs-6">3</span>
-                                                    <div class="progress w-100" style="height: 5px;">
-                                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 87%;" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center w-100">
-                                                    <span class="text-muted me-2 fs-6">2</span>
-                                                    <div class="progress w-100" style="height: 5px;">
-                                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 12%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center w-100">
-                                                    <span class="text-muted me-2 fs-6">1</span>
-                                                    <div class="progress w-100" style="height: 5px;">
-                                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
+                                        </div>
+                                        <div class="d-flex align-items-center w-100">
+                                            <span class="text-muted me-2 fs-6">4</span>
+                                            <div class="progress w-100" style="height: 5px;">
+                                                <div class="progress-bar bg-dark" role="progressbar" style="width: 78%;" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center w-100">
+                                            <span class="text-muted me-2 fs-6">3</span>
+                                            <div class="progress w-100" style="height: 5px;">
+                                                <div class="progress-bar bg-dark" role="progressbar" style="width: 87%;" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center w-100">
+                                            <span class="text-muted me-2 fs-6">2</span>
+                                            <div class="progress w-100" style="height: 5px;">
+                                                <div class="progress-bar bg-dark" role="progressbar" style="width: 12%;" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center w-100">
+                                            <span class="text-muted me-2 fs-6">1</span>
+                                            <div class="progress w-100" style="height: 5px;">
+                                                <div class="progress-bar bg-dark" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Customer Reviews -->
-                                    <h6 class="fs-6 fw-bold mt-3">Customer Reviews</h6>
-                                    <ul class="menu-list my-3">
-                                        <!-- Review -->
-                                        <li class="menu-list-item mb-3">
-                                            <div class="d-flex align-items-start">
-                                                <img data-src="assets/images/users/avatar-1.jpg" src="assets/users/default-avatar.png" alt="User Image" height="30" width="30" class="lazy rounded-circle me-2" loading="lazy">
-                                                <div class="d-block">
-                                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                                        <small class="fw-bold text-capitalize">tatiana mills</small>
-                                                        <div class="customer-rating ms-auto"></div>
-                                                    </div>
-                                                    <p class="text-wrap text-break lh-base fs-7 mb-0" style="width:320px;">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat vero eum reprehenderit iure adipisci blanditiis at dignissimos eaque ea ratione placeat mollitia illum aspernatur, magnam sint quae provident. Est ea repellendus ex? Totam corrupti
-                                                        dicta nostrum pariatur? Distinctio, vel?
-                                                    </p>
-                                                    <small class="text-muted">10.02.2022</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- /.Review -->
-                                        <!-- Review -->
-                                        <li class="menu-list-item mb-3">
-                                            <div class="d-flex align-items-start">
-                                                <img data-src="assets/images/users/avatar-2.jpg" src="assets/users/default-avatar.png" alt="User Image" height="30" width="30" class="lazy rounded-circle me-2" loading="lazy">
-                                                <div class="d-block">
-                                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                                        <small class="fw-bold text-capitalize">Leanne Hemsworth</small>
-                                                        <div class="customer-rating ms-auto"></div>
-                                                    </div>
-                                                    <p class="text-wrap text-break lh-base fs-7 mb-0" style="width:320px;">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat vero eum reprehenderit iure adipisci blanditiis at dignissimos eaque ea ratione placeat mollitia illum aspernatur, magnam sint quae provident. Est ea repellendus ex? Totam corrupti
-                                                        dicta nostrum pariatur? Distinctio, vel?
-                                                    </p>
-                                                    <small class="text-muted">10.02.2022</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- /.Review -->
-                                        <!-- Review -->
-                                        <li class="menu-list-item mb-3">
-                                            <div class="d-flex align-items-start">
-                                                <img data-src="assets/images/users/avatar-5.jpg" src="assets/users/default-avatar.png" alt="User Image" height="30" width="30" class="lazy rounded-circle me-2" loading="lazy">
-                                                <div class="d-block">
-                                                    <div class="d-flex align-items-center justify-content-between mb-2">
-                                                        <small class="fw-bold text-capitalize">Tinashe Chaterera</small>
-                                                        <div class="customer-rating ms-auto"></div>
-                                                    </div>
-                                                    <p class="text-wrap text-break lh-base fs-7 mb-0" style="width:320px;">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat vero eum reprehenderit iure adipisci blanditiis at dignissimos eaque ea ratione placeat mollitia illum aspernatur, magnam sint quae provident. Est ea repellendus ex? Totam corrupti
-                                                        dicta nostrum pariatur? Distinctio, vel?
-                                                    </p>
-                                                    <small class="text-muted">10.02.2022</small>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <!-- /.Review -->
-                                    </ul>
-                                    <!-- /.Customer Reviews -->
                                 </div>
-                                <!-- /.Product Reviews -->
                             </div>
-                            <!-- /.Nav Tabs -->
 
-                            <!-- Actions -->
-                            <div class="d-flex align-items-center justify-content-between my-3">
-                                <h6 class="fw-bold my-0">$18.39</h6>
-                                <!-- Action Buttons -->
-                                <div class="action-buttons d-flex align-items-center border border-dark">
-                                    <button type="button" class="btn btn-sm rounded-circle d-grid">
-                                        <i class="bi bi-dash m-auto"></i>
-                                    </button>
-                                    <span class="mx-3">2</span>
-                                    <button type="button" class="btn btn-sm rounded-circle d-grid">
-                                        <i class="bi bi-plus m-auto"></i>
-                                    </button>
-                                </div>
-                                <!-- /.Action Buttons -->
-                                <button type="button" class="btn btn-dark btn-sm rounded-circle d-grid">
-                                    <i class="bi bi-cart-plus m-auto"></i>
-                                </button>
-                            </div>
-                            <!-- /.Actions -->
+                            <!-- Customer Reviews -->
+                            <h6 class="fs-6 fw-bold mt-3">Customer Reviews</h6>
+                            <ul class="menu-list my-3">
+                                <!-- Review -->
+                                <li class="menu-list-item mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <img data-src="assets/images/users/avatar-1.jpg" src="assets/users/default-avatar.png" alt="User Image" height="30" width="30" class="lazy rounded-circle me-2" loading="lazy">
+                                        <div class="d-block">
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <small class="fw-bold text-capitalize">tatiana mills</small>
+                                                <div class="customer-rating ms-auto"></div>
+                                            </div>
+                                            <p class="text-wrap text-break lh-base fs-7 mb-0">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat vero eum reprehenderit iure adipisci blanditiis at dignissimos eaque ea ratione placeat mollitia illum aspernatur, magnam sint quae provident. Est ea repellendus ex? Totam corrupti
+                                                dicta nostrum pariatur? Distinctio, vel?
+                                            </p>
+                                            <small class="text-muted">10.02.2022</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- /.Review -->
+                                <!-- Review -->
+                                <li class="menu-list-item mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <img data-src="assets/images/users/avatar-2.jpg" src="assets/users/default-avatar.png" alt="User Image" height="30" width="30" class="lazy rounded-circle me-2" loading="lazy">
+                                        <div class="d-block">
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <small class="fw-bold text-capitalize">Leanne Hemsworth</small>
+                                                <div class="customer-rating ms-auto"></div>
+                                            </div>
+                                            <p class="text-wrap text-break lh-base fs-7 mb-0">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat vero eum reprehenderit iure adipisci blanditiis at dignissimos eaque ea ratione placeat mollitia illum aspernatur, magnam sint quae provident. Est ea repellendus ex? Totam corrupti
+                                                dicta nostrum pariatur? Distinctio, vel?
+                                            </p>
+                                            <small class="text-muted">10.02.2022</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- /.Review -->
+                                <!-- Review -->
+                                <li class="menu-list-item mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <img data-src="assets/images/users/avatar-5.jpg" src="assets/users/default-avatar.png" alt="User Image" height="30" width="30" class="lazy rounded-circle me-2" loading="lazy">
+                                        <div class="d-block">
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <small class="fw-bold text-capitalize">Tinashe Chaterera</small>
+                                                <div class="customer-rating ms-auto"></div>
+                                            </div>
+                                            <p class="text-wrap text-break lh-base fs-7 mb-0">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores fugiat vero eum reprehenderit iure adipisci blanditiis at dignissimos eaque ea ratione placeat mollitia illum aspernatur, magnam sint quae provident. Est ea repellendus ex? Totam corrupti
+                                                dicta nostrum pariatur? Distinctio, vel?
+                                            </p>
+                                            <small class="text-muted">10.02.2022</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- /.Review -->
+                            </ul>
+                            <!-- /.Customer Reviews -->
+
+                            <a href="#customer-reviews" class="text-decoration-underline my-3 fs-6">
+                                More Customer Reviews <i class="bi bi-chevron-right ms-1"></i>
+                            </a>
                         </div>
+                        <!-- /.Product Reviews -->
                     </div>
-                    <!-- /.Product Info -->
+                    <!-- /.Nav Tabs -->
                 </div>
             </div>
-            <!-- /.Main Content -->
+            <!-- /.Product Info -->
         </div>
+        <footer class="footer mb-5">
+            <div class="container">
+                <!-- Actions -->
+                <div class="d-flex align-items-center justify-content-between mt-3">
+                    <h6 class="fw-bold my-0">$18.39</h6>
+                    <!-- Action Buttons -->
+                    <div class="action-buttons d-flex align-items-center border border-dark">
+                        <button type="button" class="btn btn-sm rounded-circle d-grid">
+                            <i class="bi bi-dash m-auto"></i>
+                        </button>
+                        <span class="mx-3">2</span>
+                        <button type="button" class="btn btn-sm rounded-circle d-grid">
+                            <i class="bi bi-plus m-auto"></i>
+                        </button>
+                    </div>
+                    <!-- /.Action Buttons -->
+                    <a href="checkout.html" role="button" class="btn btn-dark btn-sm rounded-pill px-3 py-2 fs-6">
+                        Checkout
+                    </a>
+                </div>
+                <!-- /.Actions -->
+            </div>
+        </footer>
     </div>
 
     <!-- JQuery -->
@@ -287,14 +246,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- RateYo -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-    <!-- Owl Carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- App Core CSS -->
     <script src="assets/js/app.js"></script>
 
     <script>
         starRating('#star-rating', 4.4, 15);
-        starRating('.customer-rating', 4.4, 7);
+        starRating('.customer-rating', 4.4, 9);
     </script>
 </body>
 
