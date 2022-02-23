@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
     <!-- App Core CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
     <title>Express Checkout</title>
 </head>
 
@@ -33,7 +35,7 @@
             <!-- Payment Methods -->
             <div class="d-block mt-3">
                 <!-- Step Progress Bar -->
-                <div class="row justify-content-center align-items-center py-3">
+                <div class="row justify-content-between align-items-center py-3">
                     <div class="col-4 d-flex justify-content-around step-indicator active">
                         <div class="d-block text-center">
                             <span class="step-button shadow-sm">
@@ -61,7 +63,142 @@
                 </div>
                 <!-- /.Step Progress Bar -->
 
-                <h5 class="fw-bold fs-5">Payment Methods</h5>
+                <!-- Checkout Form -->
+                <form action="" method="post" id="checkout-form" class="row g-3 needs-validation" novalidate>
+                    <!-- Payment Methods -->
+                    <div class="tab" id="payment-method">
+                        <h6 class="fw-bold fs-6">Payment Methods</h6>
+                        <hr class="bg-white my-0">
+                        <div class="d-flex align-items-center justify-content-around my-3">
+                            <ul class="nav nav-tabs list-inline option-switch border-0 h-auto m-0 p-1" role="tablist">
+                                <li class="nav-item list-inline-item me-0" role="presentation">
+                                    <a href="#" class="nav-link active d-flex align-items-center toggle-option py-2" id="credit-card-tab" data-bs-toggle="tab" data-bs-target="#credit-card" type="button" role="tab" aria-controls="credit-card" aria-selected="true">
+                                        <img src="assets/images/app/accept-cards.svg" height="21" width="63" alt="Credit Cards" class="img-responsive me-2">
+                                    </a>
+                                </li>
+                                <li class="nav-item list-inline-item" role="presentation">
+                                    <a href="#" class="nav-link d-flex align-items-center toggle-option py-2" id="paypal-tab" data-bs-toggle="tab" data-bs-target="#paypal" type="button" role="tab" aria-controls="paypal" aria-selected="false">
+                                        <img src="assets/images/app/paypal-icon.svg" height="16" width="21" alt="Paypal" class="img-responsive me-2">
+                                    </a>
+                                </li>
+                                <li class="nav-item list-inline-item" role="presentation">
+                                    <a href="#" class="nav-link d-flex align-items-center toggle-option py-2" id="mobile-wallet-tab" data-bs-toggle="tab" data-bs-target="#mobile-wallet" type="button" role="tab" aria-controls="mobile-wallet" aria-selected="false">
+                                        <img src="assets/images/app/ecocash.svg" height="15" width="79" alt="Ecocash" class="img-responsive me-2">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content mt-4">
+                            <!-- Credit Card -->
+                            <div class="tab-pane fade show active" id="credit-card" role="tabpanel" aria-labelledby="credit-card-tab">
+                                <div class="container my-3">
+                                    <div class="row g-3" id="credit-debit-card">
+                                        <!-- Card Info -->
+                                        <div class="col-12">
+                                            <label for="payment-card" class="mb-1 fs-6">Credit Card</label>
+                                            <div id="payment-card" class="form-control control-input padding-lg"></div>
+                                        </div>
+                                        <!-- /.Card Info -->
+
+                                        <div class="form-check mb-0">
+                                            <input class="form-check-input" type="checkbox" value="" id="primary-card">
+                                            <label class="form-check-label" for="primary-card">
+                                                Make this primary card
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-0">
+                                            <input class="form-check-input" type="checkbox" value="" id="save-payment-details">
+                                            <label class="form-check-label" for="save-payment-details">
+                                                Save my payment details for future purchases
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.Credit Card -->
+
+                            <!-- PayPal -->
+                            <div class="tab-pane fade" id="paypal" role="tabpanel" aria-labelledby="paypal-tab">
+                                <div class="row g-3 p-3">
+                                    <div class="col-12 text-center">
+                                        <h5 class="fw-bold fs-5">
+                                            Express Checkout using PayPal
+                                        </h5>
+                                        <small class="text-muted lh-sm">
+                                            Make quick and safe payments using PayPal Express Checkout.
+                                        </small>
+                                        <a href="#">
+                                            <img src="assets/images/app/checkout-logo-medium.webp" width="213" height="40" class="my-3" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- PayPal -->
+
+                            <!-- Mobile Wallets -->
+                            <div class="tab-pane fade" id="mobile-wallet" role="tabpanel" aria-labelledby="mobile-wallet-tab">
+                                <div class="row g-3 p-3">
+                                    <!-- Mobile Wallet -->
+                                    <div class="col-12">
+                                        <label for="mobile-number" class="mb-1">Mobile number</label>
+                                        <input type="tel" name="mobile-number" id="mobile-number" class="form-control" placeholder="07xxxxxxxx" required>
+                                    </div>
+                                    <!-- /.Mobile Wallet -->
+
+                                    <!-- Email Holder -->
+                                    <div class="col-12">
+                                        <label for="email-holder" class="mb-1">Email</label>
+                                        <input type="email" name="email-holder" id="card-number" class="form-control" placeholder="xxxx xxxx xxxx xxxx" required>
+                                    </div>
+                                    <!-- /.Email Holder -->
+
+                                    <div class="form-check mb-0">
+                                        <input class="form-check-input" type="checkbox" value="" id="primary-wallet">
+                                        <label class="form-check-label" for="primary-wallet">
+                                            Make this primary mobile wallet
+                                        </label>
+                                    </div>
+                                    <div class="form-check mt-0">
+                                        <input class="form-check-input" type="checkbox" value="" id="save-wallet-details">
+                                        <label class="form-check-label" for="save-wallet-details">
+                                            Save my payment details for future purchases
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mobile Wallets -->
+                        </div>
+                    </div>
+                    <!-- /.Payment Methods -->
+
+                    <!-- Scan QR Code -->
+                    <div class="tab" id="qr-code-scan">
+                        <h6 class="fw-bold fs-6">QR Code Scan</h6>
+                    </div>
+                    <!-- /.Scan QR Code -->
+
+                    <!-- Confirm Payment -->
+                    <div class="tab" id="confirm-payment">
+                        <h6 class="fw-bold fs-6">Payment Confirmed</h6>
+                    </div>
+                    <!-- /.Confirm Payment -->
+
+                    <!-- Navigation Buttons -->
+                    <div class="col-12 my-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div id="back-btn">
+                                <a href="#" class="btn btn-outline-dark btn-sm rounded-pill fs-6 d-flex align-items-center justify-content" onclick="nextPrev(-1)">
+                                    <i class="bi bi-chevron-left me-1"></i> <span id="prev-btn">Continue shopping</span>
+                                </a>
+                            </div>
+                            <button class="btn bg-dark btn-sm rounded-pill fs-6 d-flex align-items-center justify-content-center text-white" id="submit" onclick="nextPrev(1)" data-tid="elements_examples.form.pay_button">
+                                <span id="next-btn" class="text-white">Continue</span> <i class="bi bi-chevron-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.Navigation Buttons -->
+                </form>
+                <!-- /.Checkout Form -->
             </div>
             <!-- /.Payment Methods -->
         </div>

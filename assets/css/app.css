@@ -56,11 +56,14 @@ ul>li {
     font-size: .9rem !important;
 }
 
+.form-control,
 p,
 .fs-6 {
     font-size: .8rem !important;
 }
 
+.form-check-label,
+label,
 small,
 .fs-7 {
     font-size: 80%;
@@ -266,6 +269,55 @@ small,
 /* /.Step-Progress Indicator */
 
 
+/* Option Switches */
+
+.option-switch,
+.option-switch.nav-tabs {
+    height: 40px !important;
+    position: relative;
+    background-color: transparent;
+    border-radius: .3125rem;
+}
+
+.option-switch .toggle-option:hover,
+.option-switch>li>.nav-link.active,
+.option-switch.nav-tabs>li.nav-item>.nav-link.active,
+.view-option.active {
+    height: 40px !important;
+    border-radius: .3125rem;
+    color: var(--bs-dark) !important;
+    background-color: var(--bs-white);
+    box-shadow: 0 3px 6px 0 rgba(140, 152, 164, .25);
+    border-bottom: none !important;
+}
+
+.option-switch.is-invalid {
+    border: 1px solid var(--danger-warning);
+}
+
+.option-switch.is-valid .option-alert,
+.option-switch.is-invalid .option-alert {
+    display: block;
+}
+
+.option-switch.is-invalid .toggle-option.active *,
+.option-switch.is-invalid .toggle-option:hover * {
+    color: var(--bs-danger) !important;
+}
+
+.option-switch.is-valid {
+    border: 1px solid var(--bs-success);
+}
+
+.option-switch.is-valid .toggle-option.active *,
+.option-switch.is-valid .toggle-option:hover * {
+    color: var(--bs-success) !important;
+}
+
+
+/* /.Option Switches */
+
+
 /* Cart Badge */
 
 .cart-badge {
@@ -275,6 +327,10 @@ small,
 
 
 /* /.Cart Bage */
+
+.tab {
+    display: none;
+}
 
 @media(max-width: 576px) {
     .w-md-100 {
