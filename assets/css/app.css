@@ -314,6 +314,21 @@ small,
     color: var(--bs-success) !important;
 }
 
+#one-money-tab {
+    position: relative;
+    height: 40px;
+    width: 80px;
+}
+
+#one-money-tab>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
 
 /* /.Option Switches */
 
