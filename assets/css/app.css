@@ -191,6 +191,11 @@ small,
     width: 24px !important;
 }
 
+.action-buttons button.btn.btn-default.rounded-circle {
+    height: 38px !important;
+    width: 38px !important;
+}
+
 .action-buttons button.btn.btn-sm.rounded-circle>*,
 .action-buttons button.btn.btn-xs.rounded-circle>* {
     margin: auto !important;
