@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="assets/js/checkout.js" defer></script>
     <!-- App Core CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
     <title>Express Checkout</title>
@@ -88,7 +89,7 @@
                     </ul>
                 </div>
                 <!-- Checkout Form -->
-                <form action="" method="post" id="payment-form" class="row g-3 needs-validation" novalidate>
+                <form id="payment-form" class="row g-3 needs-validation" novalidate>
                     <div class="tab-content mt-4">
                         <!-- Credit Card -->
                         <div class="tab-pane fade show active" id="credit-card" role="tabpanel" aria-labelledby="credit-card-tab">
@@ -97,9 +98,9 @@
                                     <!-- Card Info -->
                                     <div class="col-12">
                                         <div id="payment-element">
-                                            <!-- Elements will create form elements here -->
+                                            <!--Stripe.js injects the Payment Element-->
                                         </div>
-                                        <div id="error-message">
+                                        <div id="payment-message" class="hidden">
                                             <!-- Display error message to your customers here -->
                                         </div>
                                     </div>
@@ -122,12 +123,12 @@
                         </div>
                         <!-- /.Credit Card -->
 
-                        <!-- one-money -->
+                        <!-- One Money -->
                         <div class="tab-pane fade" id="one-money" role="tabpanel" aria-labelledby="one-money-tab">
                             <div class="row g-3 p-3">
                                 <!-- Mobile Wallet -->
                                 <div class="form-floating mb-3">
-                                    <input type="tel" class="form-control" id="netone-number" placeholder="07xxxxxxxx">
+                                    <input type="tel" class="form-control" id="netone-number" placeholder="07xxxxxxxx" required>
                                     <label for="netone-number ps-0 ms-0">Netone number</label>
                                 </div>
                                 <!-- /.Mobile Wallet -->
@@ -146,14 +147,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- one-money -->
+                        <!-- /.One Money -->
 
                         <!-- Ecocash Wallet -->
                         <div class="tab-pane fade" id="ecocash-wallet" role="tabpanel" aria-labelledby="ecocash-wallet-tab">
                             <div class="row g-3 p-3">
                                 <!-- Mobile Wallet -->
                                 <div class="form-floating mb-3">
-                                    <input type="tel" class="form-control" id="ecocash-number" placeholder="07xxxxxxxx">
+                                    <input type="tel" class="form-control" id="ecocash-number" placeholder="07xxxxxxxx" required>
                                     <label for="ecocash-number ps-0 ms-0">Econet number</label>
                                 </div>
                                 <!-- /.Mobile Wallet -->
@@ -172,7 +173,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Ecocash Wallet -->
+                        <!-- /.Ecocash Wallet -->
                     </div>
 
                     <!-- Navigation Buttons -->
@@ -181,8 +182,10 @@
                             <a href="index.html" role="button" class="btn btn-light rounded-pill fs-6">
                                 <i class="bi bi-chevron-left me-1"></i> Continue Shopping
                             </a>
-                            <button type="submit" class="btn btn-dark rounded-pill fs-6 text-center" id="submit">
-                                Pay <span class="cart-total ms-1">$123.48</span>
+                            <button type="submit" class="btn btn-dark rounded-pill fs-6 d-flex align-items-center justify-content-center text-center" id="submit">
+                                <span class="spinner spinner-border spinner-border-sm text-white hidden" id="spinner" role="status" aria-hidden="true"></span>
+                                <span id="button-text" class="ms-1">Pay</span> 
+                                <span class="cart-total ms-1">$123.48</span>
                             </button>
                         </div>
                     </div>
@@ -199,27 +202,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- App Core CSS -->
     <script src="assets/js/app.js"></script>
-    <script>
-        /*** Stripe ***/
-        // Create an instance of the Stripe object with your publishable API key
-        var stripe = Stripe('pk_test_51KWbuMDpjfWymV8pEBT5XDDjZlqktm6ZCL90PkupBO6bqXiAxp7gWbzz005WvW8Sg2grE69v1T6l9jfVgiSfqJ1j00O90a12CU');
-
-        const options = {
-            clientSecret: '{{CLIENT_SECRET}}',
-            // Fully customizable with appearance API.
-            appearance: {
-                theme: 'stripe'
-            },
-        };
-
-        // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 2
-        const elements = stripe.elements(options);
-
-        // Create and mount the Payment Element
-        const paymentElement = elements.create('payment');
-        paymentElement.mount('#payment-element');
-        /*** /.Stripe ***/
-    </script>
 </body>
 
 </html>
