@@ -178,14 +178,12 @@
 
                         <!-- Navigation Buttons -->
                         <div class="col-12 my-3">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div id="continue-shopping-btn">
-                                    <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill fs-6 d-flex align-items-center justify-content">
-                                        <i class="bi bi-chevron-left me-1"></i> <span id="prev-btn">Continue shopping</span>
-                                    </a>
-                                </div>
-                                <button class="btn bg-dark btn-sm rounded-pill fs-6 d-flex align-items-center justify-content-center text-white" id="next-btn" onclick="nextPrev(1)">
-                                    <span id="submit" class="text-white">Make Payment</span> <i class="bi bi-chevron-right ms-1"></i>
+                            <div class="d-flex align-items-center justify-content-evenly">
+                                <a href="index.html" role="button" class="btn btn-light rounded-pill fs-6">
+                                    <i class="bi bi-chevron-left me-1"></i> Continue Shopping
+                                </a>
+                                <button type="submit" class="btn btn-dark rounded-pill fs-6 text-center" id="submit">
+                                    Pay <span class="cart-total ms-1">$123.48</span>
                                 </button>
                             </div>
                         </div>
@@ -200,7 +198,7 @@
                     <div class="container text-center">
                         <h6 class="text-start fw-bold fs-6 ms-3">QR Code Scan</h6>
                         <i class="bi bi-check-circle-fill fs-1"></i>
-                        <h6 class="fs-5 fw-bold">Payment Received!</h6>
+                        <h6 class="fs-5 fw-bold">Payment Received</h6>
                         <small class="text-muted lh-sm">
                             On your way out, show this QR code to a staff member
                             so they can approve your purchase.  
@@ -217,7 +215,7 @@
                     <div class="container text-center">
                         <h6 class="text-start fw-bold fs-6 ms-3">QR Code Scan</h6>
                         <i class="bi bi-check-circle-fill fs-1"></i>
-                        <h6 class="fs-5 fw-bold">Payment Confirmed!</h6>
+                        <h6 class="fs-5 fw-bold">Payment Confirmed</h6>
                         <small class="text-muted lh-sm">
                             Your payment was successful. Thank you for shopping with us. 
                         </small>
@@ -225,11 +223,11 @@
                             <img src="assets/images/app/purchase-successful.png" alt="Payment Successful" class="img-fluid">
                         </div>
                         <div class="d-flex align-items-center justify-content-evenly">
-                            <button class="btn btn-light rounded-pill px-3 fs-6">
+                            <a href="index.html" role="button" class="btn btn-light rounded-pill px-3 fs-6">
                                 <i class="bi bi-chevron-left me-1"></i> Back to Home
-                            </button>
+                            </a>
                             <button class="btn btn-dark rounded-pill px-3 fs-6">
-                                View Order History
+                                Order History
                             </button>
                         </div>
                     </div>
@@ -247,7 +245,7 @@
         <script src="assets/js/app.js"></script>
         <script>
             // Current tab is set to be the first tab (0)
-            let currentTab = 2;
+            let currentTab = 0;
 
             // Display the current tab
             showTab(currentTab);
