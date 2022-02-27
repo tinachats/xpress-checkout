@@ -41,16 +41,11 @@ body {
 }
 
 a {
-    color: inherit;
     text-decoration: none;
 }
 
 ul>li {
     list-style: none;
-}
-
-hr {
-    background-color: var(--bs-white) !important;
 }
 
 .list-group-item {
